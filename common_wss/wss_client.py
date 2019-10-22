@@ -24,7 +24,6 @@ class ClientProtocol(WebSocketClientProtocol):
         self.factory.protocol_instance = self
 
     def onConnect(self, response):
-        print('connect')
         if self.payload:
             self.sendMessage(self.payload, isBinary=False)
         # reset the delay after reconnecting
